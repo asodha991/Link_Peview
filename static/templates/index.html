@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Link Preview Generator Demo</title>
+    <!-- <link rel="stylesheet" href="./stylesheets/style.css">  -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./static/assets/css/style.css" />
+    <script type="text/javascript" src="./static/assets/js/index.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Link Preview Generator Demo</h1>
+        <div class="content">
+            <div class="form-container">
+                <form action="/run" method="post">
+                    <form>
+                        <input type="url" name="url" required="required" placeholder="Enter a url" />
+                        <button type="submit">Run</button>
+                    </form>
+                </form>
+            </div>
+            <div class="preview-container">
+
+                <div class="loading-container hidden">
+                    <span class="processing-msg">Processing...</span>
+                    <div class="spinner">
+                        <div class="load-circle load-circle-1"></div>
+                        <div class="load-circle load-circle-2"></div>
+                        <div class="load-circle load-circle-3"></div>
+                    </div>
+                </div>
+                <span class="init-message">Submit a URL to see preview information</span>
+                <!-- {% if URL %}
+                <div class="loading-container">
+                    <span class="processing-msg">Processing...</span>
+                    <div class="spinner">
+                        <div class="load-circle load-circle-1"></div>
+                        <div class="load-circle load-circle-2"></div>
+                        <div class="load-circle load-circle-3"></div>
+                    </div>
+                </div>
+                {% endif %} -->
+                <div class="preview-data hidden">
+                    <div class="img-container">
+                        <img class="img" />
+                    </div>
+                    <div class="text-container">
+                        <span class="domain"></span>
+                        <span class="header"></span>
+                        <span class="description"></span>
+                    </div>
+                </div>
+                {% if URL %}
+                <div class="preview-data ">
+                    <div class="img-container">
+                        <span class = "Th" > Thumbnail </span>
+                        <img src=" {{ Thumbnail }} " alt="Thumbnail of URL">
+                    </div>
+                    <div class="text-container">
+                        <span class="header">Title: {{Title}}</Title> </span>
+                        <span class="domain">URL: {{URLS}} </span>
+                        <span class="description">Description: {{Description}} </span>
+                    </div>
+                </div>
+                {% endif %}
+                <span class="error-msg"></span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
